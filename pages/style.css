@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.table{
+
+}
+.table__header{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+.table__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

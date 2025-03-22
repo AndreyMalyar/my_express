@@ -1,4 +1,24 @@
-.idea
+.DS_Store
 node_modules
-dist
+/dist
+/example
+
+# local env files (локальные файлы env)
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files (Редактор каталогов и файлов)
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 

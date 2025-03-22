@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Arun",
+    "gender": "Male",
+    "physics": 88,
+    "maths": 87,
+    "english": 78,
+    "object": {
+      "age": 24
+    }
+  },{
+    "id": 2,
+    "name": "Rajesh",
+    "gender": "Male",
+    "physics": 96,
+    "maths": 100,
+    "english": 95,
+    "object": {
+      "age": 22
+    }
+  },{
+    "id": 3,
+    "name": "Ali",
+    "gender": "Male",
+    "physics": 89,
+    "maths": 90,
+    "english": 70,
+    "object": {
+      "age": 23
+    }
+  }
+]
