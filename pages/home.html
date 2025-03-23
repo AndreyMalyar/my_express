@@ -5,22 +5,41 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>my Express sample</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Docker основные команды</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styleHome.css">
 </head>
 <body>
     <header class="header">
-        <h1>Students</h1>
-        <button type="button" id="add">Добавить студента</button>
+        <div class="container">
+            <h2 class="header__title" id="test" data-name="basicDockerCommands">Основные команды Docker <span class="section__isVisible">+</span></h2>
+            <p class="header__description">Docker CLI (Command Line Interface) или просто строка командного интерфейса. В ней можно вводить команды, с помощью которых мы управляем контейнерами, образами, сетями и томами. Многое можно сделать с помощью визуального и более простого интерфейса Docker Desktop, но знание основных команд Docker CLI поможет вам эффективно работать с Docker и использовать его возможности в полной мере. В этой лекции мы рассмотрим ключевые команды Docker, которые помогут вам начать работу.</p>
+            <div class="header__buttons" id="buttons">
+                <button class="header__buttons-item" type="button" id="terminal" data-title="Команды для работы в терминале">Terminal</button>
+                <button class="header__buttons-item" type="button" id="container" data-title="Команды для работы с контейнерами">Container</button>
+            </div>
+
+        </div>
     </header>
-    <section class="table" id="table">
-        <div class="table__header">
-            <p>Имя</p>
-            <p>Пол</p>
-            <p>Английский</p>
-            <p>Математика</p>
-            <p>Физика</p>
-            <p>Изменить</p>
+
+    <section class="commands table" id="table">
+        <div class="container">
+            <h3 class="commands__title" id="title">Команды для работы в терминале</h3>
+            <table class="commands__table">
+                <thead>
+                <tr>
+                    <th>пример</th>
+                    <th class="commands__table-command">Команда</th>
+                    <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody id="outCommands">
+
+                </tbody>
+            </table>
         </div>
     </section>
 

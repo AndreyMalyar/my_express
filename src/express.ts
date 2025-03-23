@@ -1,4 +1,4 @@
-import express, { Request } from 'express';
+import express, { Router, Request, Response } from 'express';
 import fs from 'node:fs/promises'; //чтение db.json
 import path from  'node:path'; // формирователь путей
 
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 
 
 // Маршрут для главной страницы
-app.get('/', async (req, res) => {
+app.get('/', async (req: Request, res: Response) => {
     console.log('Hello from Express!');
     res.sendFile("./home.html", {root: './pages'}); // отдаем файл
 });
@@ -29,21 +29,30 @@ function getPath(file: string): string {
     return path.join(__dirname, file); // путь до файла db.json
 }
 // получение data с db.json
-async function getStudents(){
-    const jsonFile = await fs.readFile(getPath('../db.json'),'utf8');
+async function getCommands(){
+    const jsonFile = await fs.readFile(getPath('db.json'),'utf8');
     return JSON.parse(jsonFile);
-    //console.log(jsonFile); //console.log students
+    //console.log(jsonFile); //console.log commands
+}
+// записываем data db.json
+async function setCommands(file: Object[]){
+    await fs.writeFile(getPath('db.json'), JSON.stringify(file), 'utf8');
 }
 
 
-app.route('/students')
+app.route('/commands')
     .get(async (req, res) => {
-        const students = await getStudents();
-        console.log(students);
-        res.json(students)
+        const commands = await getCommands();
+        // console.log(commands);
+        res.json(commands)
     })
-    .post((req, res) => {
-        res.json('add a user')
+    .post(async (req, res) => {
+        // const jsonFile = await fs.readFile(getPath('db.json'),'utf8');
+        // получаем из файла
+        const commands = req.body;
+        // commands = JSON.parse(jsonFile)
+        await setCommands(commands)
+        res.sendStatus(201)
     })
     .put((req, res) => {
         res.json('update the book')
